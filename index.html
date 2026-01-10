@@ -81,6 +81,30 @@
       text-decoration: none;
       color: black;
     }
+
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      pointer-events: none;
+      z-index: 9999;
+      animation-name: fall, sway;
+      animation-timing-function: linear, ease-in-out;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+
+    @keyframes sway {
+      0% { margin-left: 0px; }
+      50% { margin-left: 20px; }
+      100% { margin-left: 0px; }
+    }
     
   </style>
 </head>
@@ -130,6 +154,30 @@
       <h2>Ve unutma, sana olan saygım ve sevgim asla bitmeyecek, güzelim. Sen benim canımsın ve çok değerlisin. Elimden geldiği sürece seni çok mutlu etmek istiyorum ve benimle beraber olmanı istiyorum. Seni kaybedemem… 💖</h2>
     </div>
   </div>
+
+  <script>
+  const snowCount = 60;
+
+  for (let i = 0; i < snowCount; i++) {
+    const snow = document.createElement("div");
+    snow.className = "snowflake";
+
+    const size = Math.random() * 5 + 2;
+    snow.style.width = size + "px";
+    snow.style.height = size + "px";
+
+    snow.style.left = Math.random() * window.innerWidth + "px";
+    snow.style.animationDuration =
+      Math.random() * 5 + 5 + "s, " +
+      (Math.random() * 3 + 2) + "s";
+
+    snow.style.opacity = Math.random();
+
+    document.body.appendChild(snow);
+  }
+</script>
+
 </body>
 
 </html>
+
