@@ -1,0 +1,84 @@
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #fff0f5;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .section img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff69b4;
+    }
+
+    h2 {
+      color: #ff69b4;
+      border-radius: 12px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 16px;
+      background: #f9005321;
+      border-radius: 10px;
+      padding: 5px;
+      color: black;
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      background: black;
+      border-radius: 50%;
+      opacity: 0.8;
+      pointer-events: none;
+      z-index: 9999;
+      animation-name: fall, sway;
+      animation-timing-function: linear, ease-in-out;
+      animation-name: fall, sway;
+      animation-timing-function: linear, ease-in-out;
+      animation-iteration-count: infinite, infinite;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+    
+    @keyframes sway {
+      0% { margin-left: 0px; }
+      50% { margin-left: 20px; }
+      100% { margin-left: 0px; }
+    }
